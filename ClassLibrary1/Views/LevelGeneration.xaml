@@ -1,0 +1,72 @@
+﻿<Window x:Class="BIMBOX.Revit.Tuna.Views.LevelGeneration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BIMBOX.Revit.Tuna.Views"
+        mc:Ignorable="d"
+        Title="标高管理器" Height="450" Width="800"
+         AllowsTransparency="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="选择建筑物：" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                <Button IsEnabled="False" Content="保存为新站型" Grid.Column="2" Margin="169,10,62,11" Grid.ColumnSpan="2"/>
+                <Button Command="{Binding UpdateCommand}" Content="开始创建" Grid.Column="3" HorizontalAlignment="Left" Margin="104,0,0,0" Height="23" VerticalAlignment="Center" Width="80" Grid.ColumnSpan="2" />
+                <ComboBox HorizontalAlignment="Left" Margin="106,0,0,0" VerticalAlignment="Center" Width="168" Grid.ColumnSpan="2" SelectionChanged="ComboBox_SelectionChanged">
+                    <ComboBoxItem Content="1#楼"/>
+                    <ComboBoxItem Content="2#楼"/>
+                    <ComboBoxItem Content="3#楼"/>
+                </ComboBox>
+            </Grid>
+        </Grid>
+        <TabControl TabStripPlacement="Left" FontSize="13" Grid.Row="1">
+            <TabItem Header="标高" FontSize="15">
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid ItemsSource="{Binding MockLevels,Mode=TwoWay}" SelectedItem="{Binding SelectedItem}" AutoGenerateColumns="False"  Margin="5" FontSize="13">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="名称" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="标高(mm)" Width="*"></DataGridTextColumn>
+                            <!--<DataGridCheckBoxColumn Header="结构" Width="120" Binding="{Binding IsStructural}" ElementStyle="{StaticResource CenterAlignmentCheckBox}"></DataGridCheckBoxColumn>-->
+                            <DataGridTemplateColumn Header="结构" Width="120">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding IsStructural,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Center"></CheckBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Grid.Column="1">
+                        <Button Margin="10,30,10,10" FontSize="13" Command="{Binding AddLevelCommand}">添加</Button>
+                        <Button Margin="10,20,10,10" FontSize="13" Command="{Binding DeleteLevelCommand}">删除</Button>
+                    </StackPanel>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="5" Padding="5" FontSize="13">
+                        <TextBlock.Text>注：0.000m层默认为建筑楼层。</TextBlock.Text>
+                    </TextBlock>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
