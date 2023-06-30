@@ -133,6 +133,13 @@ namespace BIMBOX.Revit.Tuna
                 YY.LongDescription = "补全建设指标";
             });
 
+            panel.CreateButton<Commands.Demo>(YYY =>
+            {
+                YYY.Text = "demo";
+                YYY.LargeImage = Properties.Resources.FloorPlan6.ConvertToBitmapSource();
+                YYY.ToolTip = "打开模型设计面板";
+                YYY.LongDescription = "什么都没有。";
+            });
 
 
             // 创建第二个面板并添加按钮
