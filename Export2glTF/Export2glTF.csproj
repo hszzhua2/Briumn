@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net48</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+	  <UseWPF>true</UseWPF>
+	  <UseWindowsForms>true</UseWindowsForms>
+	  <PlatformTarget>x64</PlatformTarget>
+	  <LangVersion>10</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BIMBOX.Revit.Entity\BIMBOX.Revit.Entity.csproj" />
+    <ProjectReference Include="..\BIMBOX.Revit.Toolkit.Mvvm\BIMBOX.Revit.Toolkit.Mvvm.csproj" />
+    <ProjectReference Include="..\BIMBOX.Revit.Toolkits\BIMBOX.Revit.Toolkit.Extension.csproj" />
+    <ProjectReference Include="..\ClassLibrary1\BIMBOX.Revit.Tuna.csproj" />
+  </ItemGroup>
+
+</Project>

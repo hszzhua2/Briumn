@@ -19,7 +19,7 @@ using System.Windows.Media.Imaging;
 namespace Tuna.Revit.Extension.Revit
 {
     /// <summary>
-    /// system bitmap extension
+    /// system bitmap extension 位图扩展
     /// </summary>
     public static class BitmapExtension
     {

@@ -8,7 +8,7 @@ namespace BIMBOX.Revit.Toolkit.Extension
 {
     public class Departments
     {
-        
+        //功能用地扩展
         public enum FunctionalArea
         {
             GeneralMedicalArea,

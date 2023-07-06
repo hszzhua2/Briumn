@@ -10,7 +10,7 @@
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 		<UseWindowsForms>true</UseWindowsForms>
 		<PlatformTarget>x64</PlatformTarget>
-		<Company>中国中元_医疗建筑研究院一院建筑所</Company>
+		<Company>中国中元_医疗建筑研究院一院建筑研究所</Company>
 		<Authors>ZefengZhuang</Authors>
 		<LangVersion>10.0</LangVersion>
 		<Description>This is a extension package for revit api.</Description>
@@ -21,7 +21,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	  <PackageReference Include="Revit_API_x64" Version="2023.0.1" />
+	  <PackageReference Include="SharpGLTF.Core" Version="1.0.0-alpha0029" />
+	  <PackageReference Include="SharpGLTF.Toolkit" Version="1.0.0-alpha0029" />
+	  <PackageReference Include="SharpGltfTileExt" Version="0.0.9" />
 	</ItemGroup>
 
 </Project>

@@ -69,7 +69,7 @@ namespace BIMBOX.Revit.Toolkit.Extension
         }
 
         /// <summary>
-        /// add generic asset property texture path
+        /// add generic asset property texture path 资产扩展
         /// </summary>
         /// <param name="asset"></param>
         /// <param name="texturePath"></param>

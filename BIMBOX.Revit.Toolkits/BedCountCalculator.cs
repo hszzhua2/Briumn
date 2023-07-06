@@ -8,6 +8,7 @@ namespace BIMBOX.Revit.Toolkit.Extension
 {
     public class BedCountCalculator
     {
+        //床位数扩展
         public static int calculateSquarePerBed(int bedCount)
         {
             int squarePerBed = 0;

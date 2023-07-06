@@ -141,6 +141,16 @@ namespace BIMBOX.Revit.Tuna
                 YYY.LongDescription = "什么都没有。";
             });
 
+            panel.CreateButton<Commands.Export2glTFCommand>(WE =>
+            {
+                WE.Text = "导出gltf";
+                WE.LargeImage = Properties.Resources.gltf.ConvertToBitmapSource();
+                WE.ToolTip = "将Revit文件导出为glTf格式";
+                WE.ToolTipImage = Properties.Resources.glTFModel.ConvertToBitmapSource();
+                WE.LongDescription =    "由现有 OpenGL 的维护组织 Khronos 推出，目的就是为了统一用于应用程序渲染的 3D 格式，更适用于基于 OpenGL 的引擎；" +
+                                        "\r\n减少了 3D 格式中除了与渲染无关的冗余信息，最小化 3D 文件资源；" +
+                                        "\r\n优化了应用程序读取效率和和减少渲染模型的运行时间；";
+            });
 
             // 创建第二个面板并添加按钮
             var ribbonPanel = application.CreateRibbonPanel(_tab, panelName2);
