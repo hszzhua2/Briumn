@@ -25,6 +25,7 @@
     <Folder Include="Model\" />
     <Folder Include="Upgraters\" />
     <Folder Include="Core\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 
   <ItemGroup>
