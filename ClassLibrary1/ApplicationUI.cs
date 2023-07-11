@@ -17,6 +17,7 @@ namespace BIMBOX.Revit.Tuna
         private const string _tab = "Briumn";
         private const string panelName1 = "材质管理器";
         private const string panelName2 = "Video tooltip";
+        private const string panelName3 = "族库管理";
         public Result OnShutdown(UIControlledApplication application)
         {
             return Result.Succeeded;
@@ -28,17 +29,26 @@ namespace BIMBOX.Revit.Tuna
             //创建选项卡
             application.CreateRibbonTab(_tab);
 
+            Autodesk.Revit.UI.RibbonPanel panelFamily = application.CreateRibbonPanel(_tab, panelName3);
+            panelFamily.CreateButton<Commands.OpenURLCommand>((ur) =>
+            {
+                ur.Text = "BIMObject";
+                ur.LargeImage = Properties.Resources.bimobject_32.ConvertToBitmapSource();
+                ur.ToolTip = "公开免费族库网站BIMObject.";
+                ur.ToolTipImage = Properties.Resources.BIMObjectScreen.ConvertToBitmapSource();
+                ur.LongDescription = "BIMObject.com is a global marketplace for the construction industry.We provide design inspiration and digital product information to the world's architects and engineers while giving building product manufacturers a better way to reach, influence, and understand them.";
+            });
+            panelFamily.CreateButton<Commands.MaterialsCommand>((ma) =>
+            {
+                ma.Text = "材质管理器";
+                ma.LargeImage = Properties.Resources.Materials.ConvertToBitmapSource();
+                ma.ToolTip = "用于文件内材质的增、改、删、查。";
+            });
+
+
             // 创建第一个面板并添加第一个按钮
             Autodesk.Revit.UI.RibbonPanel panel = application.CreateRibbonPanel(_tab, panelName1);
 
-            
-            panel.CreateButton<Commands.MaterialsCommand>((b) =>
-            {
-                b.Text = "材质管理器";
-                b.LargeImage = Properties.Resources.Materials.ConvertToBitmapSource();
-                b.ToolTipImage = Properties.Resources.Materials.ConvertToBitmapSource();
-                b.ToolTip = "删除、添加、修改文件内材质";
-            });
             // 创建第一个面板并添加第二个按钮
             panel.CreateButton<Commands.Face2Face>((c) =>
             {
@@ -60,7 +70,9 @@ namespace BIMBOX.Revit.Tuna
                 D.LongDescription = "。";
             });
 
+            //添加一个分隔线
             panel.AddSeparator();
+
             // 创建第一个面板并添加第4个按钮
             panel.CreateButton<Commands.Pt2RoomPath>((S) =>
             {
@@ -157,9 +169,7 @@ namespace BIMBOX.Revit.Tuna
                 YU.Text = "Floor Finish";
                 YU.LargeImage = Properties.Resources.FloorFinish.ConvertToBitmapSource();
                 YU.ToolTip = "将Revit文件导出为glTf格式";
-                YU.LongDescription = "由现有 OpenGL 的维护组织 Khronos 推出，目的就是为了统一用于应用程序渲染的 3D 格式，更适用于基于 OpenGL 的引擎；" +
-                                        "\r\n减少了 3D 格式中除了与渲染无关的冗余信息，最小化 3D 文件资源；" +
-                                        "\r\n优化了应用程序读取效率和和减少渲染模型的运行时间；";
+                YU.LongDescription = "这是一个新的LongDescription；";
             });
 
             // 创建第二个面板并添加按钮
@@ -183,7 +193,7 @@ namespace BIMBOX.Revit.Tuna
             // 设置按钮的工具提示
             SetRibbonItemToolTip(button, toolTip);
            
-            //窗口停靠的按键，默认打开true/false 在DockablePaneProvider中修改
+            //窗口停靠的按键，默认打开 true/false 在 DockablePaneProvider中修改
             var ribbonPanel2 = application.CreateRibbonPanel(_tab, "窗口停靠");
             var type = typeof(BIMBOX.Revit.Tuna.Commands.DockablePaneCommand);
             PushButtonData button2 = new PushButtonData("dockablePane", "窗口", type.Assembly.Location, type.FullName)

@@ -73,9 +73,9 @@ namespace BIMBOX.Revit.Tuna.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap black_and_white_16 {
+        internal static System.Drawing.Bitmap bimobject_32 {
             get {
-                object obj = ResourceManager.GetObject("black_and_white_16", resourceCulture);
+                object obj = ResourceManager.GetObject("bimobject-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,19 @@ namespace BIMBOX.Revit.Tuna.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap building {
+        internal static System.Drawing.Bitmap BIMObjectScreen {
             get {
-                object obj = ResourceManager.GetObject("building", resourceCulture);
+                object obj = ResourceManager.GetObject("BIMObjectScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap black_and_white_16 {
+            get {
+                object obj = ResourceManager.GetObject("black_and_white_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,69 +113,9 @@ namespace BIMBOX.Revit.Tuna.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap chart_bar {
-            get {
-                object obj = ResourceManager.GetObject("chart_bar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap chevron_right {
-            get {
-                object obj = ResourceManager.GetObject("chevron_right", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap CleanPath {
             get {
                 object obj = ResourceManager.GetObject("CleanPath", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap cloud_small {
-            get {
-                object obj = ResourceManager.GetObject("cloud_small", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap code {
-            get {
-                object obj = ResourceManager.GetObject("code", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap code_small {
-            get {
-                object obj = ResourceManager.GetObject("code_small", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap code_small2 {
-            get {
-                object obj = ResourceManager.GetObject("code_small2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,16 +136,6 @@ namespace BIMBOX.Revit.Tuna.Properties {
         internal static System.Drawing.Bitmap FaceWall {
             get {
                 object obj = ResourceManager.GetObject("FaceWall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap flask {
-            get {
-                object obj = ResourceManager.GetObject("flask", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,16 +243,6 @@ namespace BIMBOX.Revit.Tuna.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap icon {
-            get {
-                object obj = ResourceManager.GetObject("icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap JustBecause {
             get {
                 object obj = ResourceManager.GetObject("JustBecause", resourceCulture);
@@ -353,6 +283,16 @@ namespace BIMBOX.Revit.Tuna.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap NumberWindows {
+            get {
+                object obj = ResourceManager.GetObject("NumberWindows", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap PathWeb {
             get {
                 object obj = ResourceManager.GetObject("PathWeb", resourceCulture);
@@ -381,71 +321,11 @@ namespace BIMBOX.Revit.Tuna.Properties {
         }
         
         /// <summary>
-        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Icon revit_wire {
-            get {
-                object obj = ResourceManager.GetObject("revit_wire", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap revit_wire1 {
-            get {
-                object obj = ResourceManager.GetObject("revit_wire1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Icon revitIcon {
-            get {
-                object obj = ResourceManager.GetObject("revitIcon", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap Snipaste_2023_05_12_11_02_03 {
             get {
                 object obj = ResourceManager.GetObject("Snipaste_2023_05_12_11_02_03", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap stethoscope {
-            get {
-                object obj = ResourceManager.GetObject("stethoscope", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap terminal {
-            get {
-                object obj = ResourceManager.GetObject("terminal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap terminal_small {
-            get {
-                object obj = ResourceManager.GetObject("terminal_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -457,16 +337,6 @@ namespace BIMBOX.Revit.Tuna.Properties {
             get {
                 object obj = ResourceManager.GetObject("tooltip", resourceCulture);
                 return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap vial {
-            get {
-                object obj = ResourceManager.GetObject("vial", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

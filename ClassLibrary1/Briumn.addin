@@ -3,7 +3,7 @@
 	<AddIn Type="Application">
 		<Name>IPPR医疗一院建筑所</Name>
 		<Author>ZefengZhuang</Author>
-		<Assembly>D:\IPPR\ZefengZhuang\20230506\BRIUMN\ClassLibrary1\bin\Debug\net48\BIMBOX.Revit.Tuna.dll</Assembly>
+		<Assembly>C:\Users\zhuangzefeng\Desktop\BRIUMN\ClassLibrary1\bin\Debug\net48\BIMBOX.Revit.Tuna.dll</Assembly>
 		<ClientId>7CF714DD-94D9-4EEE-B904-FD393DE9771C</ClientId>
 		<FullClassName>BIMBOX.Revit.Tuna.ApplicationUI</FullClassName>
 		<VendorId>IPPR</VendorId>
