@@ -22,10 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Helpers\Browser\Images\" />
+    <Folder Include="Helpers\UserControls\FileBrowser\Images\" />
     <Folder Include="Model\" />
     <Folder Include="Upgraters\" />
     <Folder Include="Core\" />
-    <Folder Include="Helpers\" />
   </ItemGroup>
 
   <ItemGroup>

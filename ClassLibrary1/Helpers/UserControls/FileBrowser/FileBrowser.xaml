@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="BIMBOX.Revit.Tuna.Helpers.UserControls.FileBrowser.FileBrowser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BIMBOX.Revit.Tuna.Helpers.UserControls.FileBrowser"
+        mc:Ignorable="d">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\..\ResourceDictionaries\DictionaryWindows.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <!--Border and Main Container-->
+    <Border Style="{StaticResource UCBorderMain}">
+        <StackPanel>
+            <!--Title for user info-->
+            <TextBlock Style="{StaticResource UCTitle}" Text="Select File to Open" />
+            <!--Secondary Border and Container-->
+            <Border Style="{StaticResource UCBorderSecondaryNoBrush}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Create button to select Revit file-->
+                    <Button x:Name="File" 
+                            Click="File_Click"
+                            Grid.Column="0">
+                        <Image Height="20" Source="Images\iconFolderOpen.png"/>
+                    </Button>
+                    <!--Create binded items-->
+                    <TextBox Grid.Column="2"
+                             IsEnabled="False" 
+                             TextWrapping="Wrap"
+                             Text="{Binding Path=FilePath}"
+                             Style="{StaticResource UCTextBoxInactive}"/>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Border>
+
+    </UserControl>

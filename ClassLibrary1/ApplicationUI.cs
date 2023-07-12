@@ -28,11 +28,22 @@ namespace BIMBOX.Revit.Tuna
             RibbonControl ribbonControl = RevitRibbonControl.RibbonControl;
             //创建选项卡
             application.CreateRibbonTab(_tab);
-
+//panel 
             Autodesk.Revit.UI.RibbonPanel panelFamily = application.CreateRibbonPanel(_tab, panelName3);
+
+            var numberDoorPBD = new PushButtonData("门编号0", "门编号1", typeof(ApplicationUI).Assembly.Location, "NumberDoorsCommand");
+            numberDoorPBD.LargeImage = Properties.Resources.NumberDoors.ConvertToBitmapSource();
+            numberDoorPBD.Image = Properties.Resources.NumberDoors_16.ConvertToBitmapSource();
+
+            var buttonDatatry1 = new PushButtonData("翻管45", "管道翻弯", typeof(ApplicationUI).Assembly.Location, "PipTurnOver");
+            var buttonDatatry2 = new PushButtonData("翻管56", "管道翻弯", typeof(ApplicationUI).Assembly.Location, "PipTurnOver");
+            //创建Stack并加入
+            panelFamily.AddStackedItems(buttonDatatry1, buttonDatatry2, numberDoorPBD);
+
             panelFamily.CreateButton<Commands.OpenURLCommand>((ur) =>
             {
                 ur.Text = "BIMObject";
+                ur.Image = Properties.Resources.bimobject_16.ConvertToBitmapSource();
                 ur.LargeImage = Properties.Resources.bimobject_32.ConvertToBitmapSource();
                 ur.ToolTip = "公开免费族库网站BIMObject.";
                 ur.ToolTipImage = Properties.Resources.BIMObjectScreen.ConvertToBitmapSource();
@@ -44,7 +55,7 @@ namespace BIMBOX.Revit.Tuna
                 ma.LargeImage = Properties.Resources.Materials.ConvertToBitmapSource();
                 ma.ToolTip = "用于文件内材质的增、改、删、查。";
             });
-
+            
 
             // 创建第一个面板并添加第一个按钮
             Autodesk.Revit.UI.RibbonPanel panel = application.CreateRibbonPanel(_tab, panelName1);
@@ -68,6 +79,16 @@ namespace BIMBOX.Revit.Tuna
                 D.ToolTipImage = Properties.Resources.CanvasChange.ConvertToBitmapSource();
                 D.ToolTip = "点击切换黑白背景。";
                 D.LongDescription = "。";
+            });
+
+            panel.CreateButton<Commands.NumberDoorsCommand>((Do) =>
+            {
+                Do.Text = "门编号";
+                Do.LargeImage = Properties.Resources.NumberDoors.ConvertToBitmapSource();
+                Do.Image = Properties.Resources.NumberDoors_16.ConvertToBitmapSource();
+                Do.ToolTipImage = Properties.Resources.CanvasChange.ConvertToBitmapSource();
+                Do.ToolTip = "点击切换黑白背景。";
+                Do.LongDescription = "。";
             });
 
             //添加一个分隔线
@@ -176,7 +197,7 @@ namespace BIMBOX.Revit.Tuna
             var ribbonPanel = application.CreateRibbonPanel(_tab, panelName2);
             var buttonData = new PushButtonData("翻管", "管道翻弯", typeof(ApplicationUI).Assembly.Location, "PipTurnOver");
             var buttonData5 = new PushButtonData("全体起立！", "全体起立！", typeof(ApplicationUI).Assembly.Location, "MultiSelectAndGetBoundingBox_Good");
-
+           
             // 指定按钮图标的路径
             buttonData.LargeImage = Properties.Resources.Pipes.ConvertToBitmapSource();
             buttonData5.LargeImage = Properties.Resources.FloorPlan2.ConvertToBitmapSource();

@@ -73,6 +73,16 @@ namespace BIMBOX.Revit.Tuna.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap bimobject_16 {
+            get {
+                object obj = ResourceManager.GetObject("bimobject_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap bimobject_32 {
             get {
                 object obj = ResourceManager.GetObject("bimobject-32", resourceCulture);
@@ -276,6 +286,26 @@ namespace BIMBOX.Revit.Tuna.Properties {
         internal static System.Drawing.Bitmap NetWeb {
             get {
                 object obj = ResourceManager.GetObject("NetWeb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap NumberDoors {
+            get {
+                object obj = ResourceManager.GetObject("NumberDoors", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap NumberDoors_16 {
+            get {
+                object obj = ResourceManager.GetObject("NumberDoors_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
