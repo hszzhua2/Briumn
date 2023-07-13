@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BIMBOX.Revit.Tuna.Helpers.MessageWindow"
         mc:Ignorable="d"
-                FocusManager.FocusedElement="{Binding ElementName=OK}"
+        FocusManager.FocusedElement="{Binding ElementName=OK}"
         Width="420"
         ResizeMode="NoResize"
         SizeToContent="Height"
@@ -34,9 +34,7 @@
                 </Grid.ColumnDefinitions>
                 <Button x:Name="OK" Click="OK_Click"  Content="OK" Grid.Column="2" IsDefault="True" Margin="0 0 10 0"></Button>
             </Grid>
-
         </StackPanel>
     </Border>
-
 </Window>
 

@@ -23,7 +23,7 @@
 
             <!-- Select number options -->
             <TextBlock Style="{StaticResource FirstTitle}">
-                            Select number option:
+                            编号方式:
             </TextBlock>
             <Border Style="{StaticResource radioButtonBorder}">
                 <Grid>
@@ -33,11 +33,11 @@
                     </Grid.ColumnDefinitions>
                     <RadioButton Grid.Column="0" GroupName="numberOptions" x:Name="numeric"
                                  ToggleButton.Checked="Numeric_Checked"  ToggleButton.Unchecked="Numeric_Checked">
-                        Numeric: 101-1, 101-2, ...
+                        按数字: 101-1, 101-2, ...
                     </RadioButton>
                     <RadioButton Grid.Column="1" GroupName="numberOptions" x:Name="alphabetic" 
                                  IsChecked="True">
-                        Alphabetic: 101-A, 101-B, ...
+                        按字母: 101-A, 101-B, ...
                     </RadioButton>
                 </Grid>
             </Border>
@@ -48,28 +48,28 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Style="{StaticResource Title}">Separator:</TextBlock>
+                <TextBlock Grid.Column="0" Style="{StaticResource Title}">分隔符:</TextBlock>
                 <TextBox x:Name="SeparatorTextBox" Style="{StaticResource TextBox}" Text="-" Grid.ColumnSpan="2" Margin="262,14,-0.4,-0.4"/>
             </Grid>
 
             <!-- Select view type -->
             <TextBlock Style="{StaticResource Title}">
-                Select phase:
+                模型阶段:
             </TextBlock>
             <ComboBox x:Name="comboDisplayPhases"
                       ItemsSource="{Binding CbPhases}"
                       SelectedItem="{Binding SelectedComboItemPhase}"
-                      Style="{StaticResource comboDisplay}">
+                      Style="{StaticResource comboDisplay}" Height="28" Width="256" HorizontalAlignment="Left">
             </ComboBox>
 
             <!-- Select parameter -->
             <TextBlock Style="{StaticResource Title}">
-                Select parameter to store door number:
+                目标参数:
             </TextBlock>
             <ComboBox x:Name="comboDisplayParameters"
                       ItemsSource="{Binding CbParameters}"
                       SelectedItem="{Binding SelectedComboItemParameters}"
-                      Style="{StaticResource comboDisplay}">
+                      Style="{StaticResource comboDisplay}" HorizontalAlignment="Left" Width="255">
             </ComboBox>
 
             <!-- Buttons End -->

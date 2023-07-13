@@ -88,7 +88,7 @@
     <Style TargetType="TextBox" x:Key="TextBoxDisplay">
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="Padding" Value="0 5 0 5"/>
-        <Setter Property="Background" Value="#CCFFFF"/>
+        <Setter Property="Background" Value="#8087C7E6"/>
     </Style>
 
     <!-- Style for grid menu -->
