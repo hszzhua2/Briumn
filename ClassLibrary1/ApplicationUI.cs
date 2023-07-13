@@ -1,8 +1,6 @@
-﻿using Autodesk.Revit.UI;
+﻿using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
 using Autodesk.Windows;
-using BIMBOX.Revit.Toolkit.Extension;
-using NPOI.SS.Formula.Functions;
-using System.Configuration.Assemblies;
 using System.IO;
 using System.Reflection;
 using System.Windows.Media.Imaging;
@@ -16,9 +14,10 @@ namespace BIMBOX.Revit.Tuna
         internal static ApplicationUI? Current;
         internal Services.ExternalEventService? _service;
         private const string _tab = "Briumn";
-        private const string panelName1 = "材质管理器";
-        private const string panelName2 = "Video tooltip";
-        private const string panelName3 = "族库管理";
+        private const string panelName1 = "族库管理";
+        private const string panelName2 = "建筑防火设计";
+        private const string panelName3 = "数据交互";
+        private const string panelName4 = "机电交互";
         public Result OnShutdown(UIControlledApplication application)
         {
             return Result.Succeeded;
@@ -30,7 +29,7 @@ namespace BIMBOX.Revit.Tuna
             //创建选项卡RibbonTab, 名称已经定义在构造函数；
             application.CreateRibbonTab(_tab);
             //创建第一个RibbonPanel ；
-            Autodesk.Revit.UI.RibbonPanel panelFamily = application.CreateRibbonPanel(_tab, panelName3);
+            Autodesk.Revit.UI.RibbonPanel panelFamily = application.CreateRibbonPanel(_tab, panelName1);
 
             var numberDoorPBD = new PushButtonData("门编号0", "门编号1", typeof(ApplicationUI).Assembly.Location, "NumberDoorsCommand");
             numberDoorPBD.LargeImage = Properties.Resources.NumberDoors.ConvertToBitmapSource();
@@ -83,11 +82,8 @@ namespace BIMBOX.Revit.Tuna
                 Oo.ToolTip = "公开免费族库网站BIMObject.";
                 Oo.LongDescription = "BIMObject.com is a global marketplace for the construction industry.We provide design inspiration and digital product information to the world's architects and engineers while giving building product manufacturers a better way to reach, influence, and understand them.";
             });
-
-
-            // 创建第一个面板并添加第一个按钮
-            Autodesk.Revit.UI.RibbonPanel panel = application.CreateRibbonPanel(_tab, panelName1);
-
+            // 创建第2个PANEL
+            Autodesk.Revit.UI.RibbonPanel panel = application.CreateRibbonPanel(_tab, panelName2);
             // 创建第一个面板并添加第二个按钮
             panel.CreateButton<Commands.Face2Face>((c) =>
             {

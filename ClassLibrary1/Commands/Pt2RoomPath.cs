@@ -1,14 +1,8 @@
-﻿using Autodesk.Revit.ApplicationServices;
-using Autodesk.Revit.Attributes;
+﻿using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
-using Autodesk.Revit.DB.Architecture;
 using Autodesk.Revit.DB.Analysis;
 using Autodesk.Revit.UI;
-using Autodesk.Revit.UI.Selection;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace BIMBOX.Revit.Tuna.Commands
 {
@@ -24,7 +18,7 @@ namespace BIMBOX.Revit.Tuna.Commands
             {
                 // Get all room elements
                 FilteredElementCollector collector = new FilteredElementCollector(doc);
-                ICollection<Element> rooms = collector.OfCategory(BuiltInCategory.OST_Rooms).OfClass(typeof(SpatialElement)).ToElements();
+                ICollection<Element> rooms = collector.OfClass(typeof(SpatialElement)).OfCategory(BuiltInCategory.OST_Rooms).ToElements();
 
                 // Create array to store all room location points
                 List<XYZ> roomPoints = new List<XYZ>();
@@ -33,7 +27,7 @@ namespace BIMBOX.Revit.Tuna.Commands
                 foreach (Element room in rooms)
                 {
                     SpatialElement spatialElement = room as SpatialElement;
-                    LocationPoint locationPoint = spatialElement.Location as LocationPoint;
+                    LocationPoint locationPoint = room.Location as LocationPoint;
 
                     // Check if locationPoint is not null before accessing its properties
                     if (locationPoint != null)
@@ -54,18 +48,13 @@ namespace BIMBOX.Revit.Tuna.Commands
                     // Use the first room location point as the starting point
                     XYZ firstPoint = uidoc.Selection.PickPoint("Select first point for Path of Travel");
 
-                    // Check if any rooms were found
-                    if (flattenedRoomPoints.Count == 0)
-                    {
-                        TaskDialog.Show("No Rooms Found", "No rooms were found in the model. Please add rooms or check the model.");
-                        return Result.Failed;
-                    }
-
                     // Iterate through all room location points and connect them in order
-                    foreach (XYZ endPoint in flattenedRoomPoints)
+                    for (int i = 0; i < flattenedRoomPoints.Count; i++)
                     {
+                        if (i == 0) continue; // Skip the first room location point since it's the starting point
+
+                        XYZ endPoint = flattenedRoomPoints[i];
                         PathOfTravel.Create(doc.ActiveView, firstPoint, endPoint);
-                        //firstPoint = endPoint;
                     }
 
                     t.Commit();
