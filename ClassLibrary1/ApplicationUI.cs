@@ -1,6 +1,7 @@
 ﻿using Autodesk.Revit.UI;
 using Autodesk.Windows;
 using BIMBOX.Revit.Toolkit.Extension;
+using NPOI.SS.Formula.Functions;
 using System.Configuration.Assemblies;
 using System.IO;
 using System.Reflection;
@@ -26,21 +27,41 @@ namespace BIMBOX.Revit.Tuna
         public Result OnStartup(UIControlledApplication application)
         {
             RibbonControl ribbonControl = RevitRibbonControl.RibbonControl;
-            //创建选项卡
+            //创建选项卡RibbonTab, 名称已经定义在构造函数；
             application.CreateRibbonTab(_tab);
-            //panel 
+            //创建第一个RibbonPanel ；
             Autodesk.Revit.UI.RibbonPanel panelFamily = application.CreateRibbonPanel(_tab, panelName3);
 
             var numberDoorPBD = new PushButtonData("门编号0", "门编号1", typeof(ApplicationUI).Assembly.Location, "NumberDoorsCommand");
             numberDoorPBD.LargeImage = Properties.Resources.NumberDoors.ConvertToBitmapSource();
             numberDoorPBD.Image = Properties.Resources.NumberDoors_16.ConvertToBitmapSource();
 
-            var buttonDatatry1 = new PushButtonData("翻管45", "管道翻弯", typeof(ApplicationUI).Assembly.Location, "PipTurnOver");
-            var buttonDatatry2 = new PushButtonData("翻管56", "管道翻弯", typeof(ApplicationUI).Assembly.Location, "PipTurnOver");
-            //创建Stack并加入
-            panelFamily.AddStackedItems(buttonDatatry1, buttonDatatry2, numberDoorPBD);
+            PushButtonData bimObjectButtonData = new PushButtonData(
+                "BIMObjectButton",
+                "BIMObject",
+                Assembly.GetExecutingAssembly().Location,
+                "OpenURLCommand");
+            bimObjectButtonData.Image = Properties.Resources.bimobject_16.ConvertToBitmapSource();
+            bimObjectButtonData.LargeImage = Properties.Resources.bimobject_32.ConvertToBitmapSource();
+            bimObjectButtonData.ToolTip = "公开免费族库网站BIMObject.";
+            bimObjectButtonData.ToolTipImage = Properties.Resources.BIMObjectScreen.ConvertToBitmapSource();
+            bimObjectButtonData.LongDescription = "BIMObject.com is a global marketplace for the construction industry. We provide design inspiration and digital product information to the world's architects and engineers while giving building product manufacturers a better way to reach, influence, and understand them.";
 
-            panelFamily.CreateButton<Commands.OpenURLCommand>((ur) =>
+
+            PushButtonData familyManagerbtn = new PushButtonData(
+               "族管理器",
+               "族管理器",
+               Assembly.GetExecutingAssembly().Location,
+               "OpenURLCommand");
+            familyManagerbtn.Image = Properties.Resources.bimobject_16.ConvertToBitmapSource();
+            familyManagerbtn.LargeImage = Properties.Resources.bimobject_32.ConvertToBitmapSource();
+            familyManagerbtn.ToolTip = "公开免费族库网站BIMObject.";
+            familyManagerbtn.ToolTipImage = Properties.Resources.BIMObjectScreen.ConvertToBitmapSource();
+
+            //创建Stack并加入3个按钮
+            panelFamily.AddStackedItems(familyManagerbtn, bimObjectButtonData, numberDoorPBD);
+
+            panelFamily.CreateButton<Commands.ModelessCommand>((ur) =>
             {
                 ur.Text = "BIMObject";
                 ur.Image = Properties.Resources.bimobject_16.ConvertToBitmapSource();
@@ -55,7 +76,14 @@ namespace BIMBOX.Revit.Tuna
                 ma.LargeImage = Properties.Resources.Materials.ConvertToBitmapSource();
                 ma.ToolTip = "用于文件内材质的增、改、删、查。";
             });
-            
+            panelFamily.CreateButton<Commands.PickWallAndCreateNewWall>((Oo) =>
+            {
+                Oo.Text = "垂直墙";
+                Oo.LargeImage = Properties.Resources.FloorPlan6.ConvertToBitmapSource();
+                Oo.ToolTip = "公开免费族库网站BIMObject.";
+                Oo.LongDescription = "BIMObject.com is a global marketplace for the construction industry.We provide design inspiration and digital product information to the world's architects and engineers while giving building product manufacturers a better way to reach, influence, and understand them.";
+            });
+
 
             // 创建第一个面板并添加第一个按钮
             Autodesk.Revit.UI.RibbonPanel panel = application.CreateRibbonPanel(_tab, panelName1);
