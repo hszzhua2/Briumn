@@ -61,7 +61,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
+	
 	<Target Name="CopyAddin" BeforeTargets="PostBuildEvent">
 		<ItemGroup>
 			<SouceFiles Include="$(ProjectDir)$(OutDir)\**\*.*"></SouceFiles>
@@ -71,7 +71,4 @@
 
 		<Copy SourceFiles="@(SourceFiles)" DestinationFiles="@(sourceFiles-&gt;'C:\ProgramData\Autodesk\Revit\Addins\2023'\Tuna%(RecursiveDir%(Filename)%(Extension)))"></Copy>
 	</Target>
-	
-
-
 </Project>
