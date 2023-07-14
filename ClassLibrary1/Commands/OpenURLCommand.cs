@@ -3,7 +3,8 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Diagnostics;
 
-
+namespace BIMBOX.Revit.Tuna.Commands
+{
     [Transaction(TransactionMode.Manual)]
     public class OpenURLCommand : IExternalCommand
     {
@@ -24,4 +25,4 @@ using System.Diagnostics;
             }
         }
     }
-
+}

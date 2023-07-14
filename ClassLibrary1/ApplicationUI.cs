@@ -29,6 +29,10 @@ namespace BIMBOX.Revit.Tuna
             //创建选项卡RibbonTab, 名称已经定义在构造函数；
             application.CreateRibbonTab(_tab);
             //创建第一个RibbonPanel ；
+            //创建第一个RibbonPanel ；
+            //创建第一个RibbonPanel ；
+            //创建第一个RibbonPanel ；
+            //创建第一个RibbonPanel ；
             Autodesk.Revit.UI.RibbonPanel panelFamily = application.CreateRibbonPanel(_tab, panelName1);
 
             var numberDoorPBD = new PushButtonData("门编号0", "门编号1", typeof(ApplicationUI).Assembly.Location, "NumberDoorsCommand");
@@ -39,7 +43,7 @@ namespace BIMBOX.Revit.Tuna
                 "BIMObjectButton",
                 "BIMObject",
                 Assembly.GetExecutingAssembly().Location,
-                "OpenURLCommand");
+                "BIMBOX.Revit.Tuna.Commands.OpenURLCommand");
             bimObjectButtonData.Image = Properties.Resources.bimobject_16.ConvertToBitmapSource();
             bimObjectButtonData.LargeImage = Properties.Resources.bimobject_32.ConvertToBitmapSource();
             bimObjectButtonData.ToolTip = "公开免费族库网站BIMObject.";
@@ -82,6 +86,11 @@ namespace BIMBOX.Revit.Tuna
                 Oo.ToolTip = "公开免费族库网站BIMObject.";
                 Oo.LongDescription = "BIMObject.com is a global marketplace for the construction industry.We provide design inspiration and digital product information to the world's architects and engineers while giving building product manufacturers a better way to reach, influence, and understand them.";
             });
+
+            // 创建第2个PANEL
+            // 创建第2个PANEL
+            // 创建第2个PANEL
+            // 创建第2个PANEL
             // 创建第2个PANEL
             Autodesk.Revit.UI.RibbonPanel panel = application.CreateRibbonPanel(_tab, panelName2);
             // 创建第一个面板并添加第二个按钮
@@ -217,9 +226,34 @@ namespace BIMBOX.Revit.Tuna
                 YU.LongDescription = "这是一个新的LongDescription；";
             });
 
+
+
+
+
+
+
+
+
+
+
             // 创建第二个面板并添加按钮
-            var ribbonPanel = application.CreateRibbonPanel(_tab, panelName2);
-            var buttonData = new PushButtonData("翻管", "管道翻弯", typeof(ApplicationUI).Assembly.Location, "PipTurnOver");
+            var ribbonPanel = application.CreateRibbonPanel(_tab, panelName4);
+
+
+            PushButtonData buttonData = new PushButtonData(
+               "翻管",
+               "管道翻弯",
+               typeof(ApplicationUI).Assembly.Location,
+               "PipTurnOver");
+            buttonData.Image = Properties.Resources.Pipes_16.ConvertToBitmapSource();
+            buttonData.LargeImage = Properties.Resources.Pipes.ConvertToBitmapSource();
+            buttonData.ToolTip = "手动选择管道翻弯的位置/高度。";
+            buttonData.ToolTipImage = Properties.Resources.BIMObjectScreen.ConvertToBitmapSource();
+
+
+
+
+
             var buttonData5 = new PushButtonData("全体起立！", "全体起立！", typeof(ApplicationUI).Assembly.Location, "MultiSelectAndGetBoundingBox_Good");
            
             // 指定按钮图标的路径
@@ -238,6 +272,8 @@ namespace BIMBOX.Revit.Tuna
             // 设置按钮的工具提示
             SetRibbonItemToolTip(button, toolTip);
            
+
+
             //窗口停靠的按键，默认打开 true/false 在 DockablePaneProvider中修改
             var ribbonPanel2 = application.CreateRibbonPanel(_tab, "窗口停靠");
             var type = typeof(BIMBOX.Revit.Tuna.Commands.DockablePaneCommand);

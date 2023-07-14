@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BIMBOX.Revit.Tuna", "ClassL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BIMBOX.Revit.Entity", "BIMBOX.Revit.Entity\BIMBOX.Revit.Entity.csproj", "{85F56290-7095-4002-BE5C-735EB482DA0D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BIMBOX.Revit.Toolkit.Extension", "BIMBOX.Revit.Toolkits\BIMBOX.Revit.Toolkit.Extension.csproj", "{C6255B33-A235-4E84-A0C6-E0760DFBFB45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Revit.Toolkit.Extension", "BIMBOX.Revit.Toolkits\Revit.Toolkit.Extension.csproj", "{C6255B33-A235-4E84-A0C6-E0760DFBFB45}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BIMBOX.Revit.Toolkit.Mvvm", "BIMBOX.Revit.Toolkit.Mvvm\BIMBOX.Revit.Toolkit.Mvvm.csproj", "{17912BA0-EC55-4BDA-817D-20828070E609}"
 EndProject

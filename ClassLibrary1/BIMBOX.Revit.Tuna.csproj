@@ -31,7 +31,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BIMBOX.Revit.Entity\BIMBOX.Revit.Entity.csproj" />
-    <ProjectReference Include="..\BIMBOX.Revit.Toolkits\BIMBOX.Revit.Toolkit.Extension.csproj" />
+    <ProjectReference Include="..\BIMBOX.Revit.Toolkits\Revit.Toolkit.Extension.csproj" />
   </ItemGroup>
 
   <ItemGroup>

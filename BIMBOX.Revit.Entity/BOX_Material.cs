@@ -11,7 +11,7 @@ namespace BIMBOX.Revit.Entity
 {
     public class BOX_Material
     {
-        public BOX_Material(Material material) 
+        public BOX_Material(Material material)
         {
             Material = material;
 
@@ -29,25 +29,25 @@ namespace BIMBOX.Revit.Entity
         public Material Material { get; private set; }
 
         public Document Document { get => Material.Document; }
-        
-        public string Name 
-        { 
-            get=> _name;
-            set 
+
+        public string Name
+        {
+            get => _name;
+            set
             {
                 _name = value;
                 Document.NewTransaction("修改名称", () => Material.Name = value);
             }
         }
 
-        
-        public Autodesk.Revit.DB.Color Color 
-        { 
+
+        public Autodesk.Revit.DB.Color Color
+        {
             get => _color;
-            set 
+            set
             {
                 _color = value;
-                Document.NewTransaction("修改颜色", ()=>  Material.Color = value);
+                Document.NewTransaction("修改颜色", () => Material.Color = value);
             }
         }
 
@@ -56,7 +56,7 @@ namespace BIMBOX.Revit.Entity
         private Autodesk.Revit.DB.Color GetAppearanceColor()
         {
             ElementId id = Material.AppearanceAssetId;
-            if (id != null&&id.IntegerValue != -1)
+            if (id != null && id.IntegerValue != -1)
             {
                 AppearanceAssetElement appearanceAssetElement = Document.GetElement(id) as AppearanceAssetElement;
                 Asset asset = appearanceAssetElement.GetRenderingAsset();
